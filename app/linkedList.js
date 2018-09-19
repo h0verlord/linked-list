@@ -1,14 +1,8 @@
-class Node {
-  constructor(data) {
-    this.data = data
-    this.next = null
-  }
-}
+const Node = require('./Node')
 
-class NodeList {
+class LinkedList {
   constructor() {
     this.head = null
-    this.length = 0
   }
 
   addToList(data) {
@@ -17,7 +11,6 @@ class NodeList {
 
     if (!checkLastNode) {
       this.head = nodeToBeAdded
-      this.length++
       return nodeToBeAdded
     }
 
@@ -30,10 +23,4 @@ class NodeList {
     return nodeToBeAdded
   }
 }
-
-let list = new NodeList()
-for (let i = 0; i < 5; i++) {
-  list.addToList(i)
-}
-
-console.log(list)
+module.exports = LinkedList
